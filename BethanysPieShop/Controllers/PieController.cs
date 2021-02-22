@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using BethanysPieShop.Models;
 using BethanysPieShop.ViewModels;
-using Microsoft .AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,6 +10,8 @@ namespace BethanysPieShop.Controllers
 {
     public class PieController : Controller
     {
+        public const string AllPies = "All pies";
+
         private readonly IPieRepository _pieRepository;
         private readonly ICategoryRepository _categoryRepository;
 
@@ -29,7 +29,7 @@ namespace BethanysPieShop.Controllers
             if (string.IsNullOrEmpty(category))
             {
                 pies = _pieRepository.AllPies.OrderBy(p => p.PieId);
-                currentCategory = "All pies";
+                currentCategory = AllPies;
             }
             else
             {

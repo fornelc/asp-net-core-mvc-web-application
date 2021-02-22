@@ -15,7 +15,7 @@ namespace BethanysPieShop.Models
 
         public List<ShoppingCartItem> ShoppingCartItems { get; set; }
 
-        private ShoppingCart(AppDbContext appDbContext)
+        public ShoppingCart(AppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
         }
